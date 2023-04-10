@@ -7,3 +7,8 @@ export interface Item {
   category: string;
   rating: { rate: number; count: number };
 }
+
+export interface Sort {
+  category: string;
+  sort: string;
+}
