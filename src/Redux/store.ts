@@ -1,5 +1,5 @@
 import { productsApi } from './Slice/productsSlice';
-import sortReducer from './Slice/sortSlice'
+import sortReducer from './Slice/sortSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({

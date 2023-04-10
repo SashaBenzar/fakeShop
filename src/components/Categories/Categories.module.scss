@@ -1,23 +1,23 @@
 .ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow: auto;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
 
-    .li{
-        border: 1px #1B1B1B solid;
-        background: #1B1B1B;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 20px;
-        margin: 0px 20px 0px 0px;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-        &:hover{
-            background: #fff;
-            color: #1B1B1B;
-            cursor: pointer;
-        }
+  .li {
+    border: 1px #1b1b1b solid;
+    background: #1b1b1b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0px 20px 0px 0px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    &:hover {
+      background: #fff;
+      color: #1b1b1b;
+      cursor: pointer;
     }
+  }
 }

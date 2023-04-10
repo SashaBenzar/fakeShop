@@ -1,0 +1,63 @@
+.header {
+  background: #1b1b1b;
+  padding: 20px 0px;
+  margin: 0px 0px 30px 0px;
+  &Body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Logo {
+    font-family: 'Italiana', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 57px;
+    color: #ffffff;
+  }
+  &Search {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    margin: 0px 20px;
+    input {
+      width: 100%;
+      padding: 7px 20px;
+      background: #ffffff;
+      border-radius: 25px;
+      border: 0px;
+      font-family: 'Inconsolata';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 26px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    img {
+      position: absolute;
+      right: 0;
+      margin: 0px 15px 0px 0px;
+    }
+  }
+  &Menu {
+    display: flex;
+    align-items: center;
+  }
+  &Basket {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0px 20px 0px 0px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+  &Profile {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,24 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { PayloadAction } from '@reduxjs/toolkit'
-import { Sort } from '../types'
+import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Sort } from '../types';
 
 const initialState: Sort = {
-    category: "",
-    sort: "asc",
-}
+  category: '',
+  sort: 'asc',
+};
 
 export const sortSlice = createSlice({
-    name: 'sort',
-    initialState,
-    reducers: {
-        setCategory: (state, action: PayloadAction<string>) => {
-            state.category = action.payload;
-        },
-        setSort: (state, action: PayloadAction<string>) => {
-            state.sort = action.payload;
-        },
-    }
-})
+  name: 'sort',
+  initialState,
+  reducers: {
+    setCategory: (state, action: PayloadAction<string>) => {
+      state.category = action.payload;
+    },
+    setSort: (state, action: PayloadAction<string>) => {
+      state.sort = action.payload;
+    },
+  },
+});
 
 export const { setCategory, setSort } = sortSlice.actions;
 export default sortSlice.reducer;
