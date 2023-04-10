@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
+
 import search from '../../img/search.svg';
 import basket from '../../img/basket.svg';
 import profile from '../../img/profile.svg';
