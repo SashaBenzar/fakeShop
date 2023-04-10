@@ -1,13 +1,13 @@
-import { useAppDispatch } from "../../Redux/hooks";
+import { selectSort, useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { setSort } from "../../Redux/Slice/sortSlice";
+
+import styles from "./Sort.module.scss";
 
 export const Sort = () => {
     const dispatch = useAppDispatch();
+    const { sort } = useAppSelector(selectSort);
 
     return (
-        <ul>
-            <li onClick={() => dispatch(setSort('asc'))}>asc</li>
-            <li onClick={() => dispatch(setSort('desc'))}>desc</li>
-        </ul>
+        <div className={styles.div}>Sort by: <span className={styles.span} onClick={() => dispatch(setSort(sort == 'asc' ? 'desc' : 'asc'))}>price{sort == 'asc' ? '▲' : '▼'}</span></div>
     );
 }
