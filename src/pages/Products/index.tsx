@@ -8,7 +8,8 @@ import { ProductsSkeleton } from './ProductsSkeleton';
 
 export const Products: React.FC = () => {
   const { category, sort, search } = useAppSelector(selectSort);
-  const { data: items, isLoading, error } = useGetProductsQuery({ category, sort });
+  const { data: items, isFetching, error } = useGetProductsQuery({ category, sort });
+
   return (
     <section className={styles.products}>
       <div className="conteiner">
@@ -19,9 +20,11 @@ export const Products: React.FC = () => {
             <Sort />
           </div>
           <div className={styles.productsCarts}>
-            {isLoading && <ProductsSkeleton />}
+            {isFetching && <ProductsSkeleton />}
             {error && <h1>Error</h1>}
-            {items &&
+            {!isFetching &&
+              !error &&
+              items &&
               items
                 .filter(({ title }) => title.toLowerCase().includes(search.toLowerCase()))
                 .map((item) => <Cart key={item.id} {...item} />)}
