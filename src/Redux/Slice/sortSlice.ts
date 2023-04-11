@@ -5,6 +5,7 @@ import { Sort } from '../types';
 const initialState: Sort = {
   category: '',
   sort: 'asc',
+  search: '',
 };
 
 export const sortSlice = createSlice({
@@ -17,8 +18,11 @@ export const sortSlice = createSlice({
     setSort: (state, action: PayloadAction<string>) => {
       state.sort = action.payload;
     },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
   },
 });
 
-export const { setCategory, setSort } = sortSlice.actions;
+export const { setCategory, setSort, setSearch } = sortSlice.actions;
 export default sortSlice.reducer;

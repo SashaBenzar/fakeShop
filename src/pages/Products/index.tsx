@@ -4,9 +4,10 @@ import { Categories, Sort, Cart } from '../../components/';
 
 import styles from './Products.module.scss';
 import React from 'react';
+import { ProductsSkeleton } from './ProductsSkeleton';
 
 export const Products: React.FC = () => {
-  const { category, sort } = useAppSelector(selectSort);
+  const { category, sort, search } = useAppSelector(selectSort);
   const { data: items, isLoading, error } = useGetProductsQuery({ category, sort });
   return (
     <section className={styles.products}>
@@ -18,9 +19,12 @@ export const Products: React.FC = () => {
             <Sort />
           </div>
           <div className={styles.productsCarts}>
-            {isLoading && <h1>Loading...</h1>}
+            {isLoading && <ProductsSkeleton />}
             {error && <h1>Error</h1>}
-            {items && items.map((item) => <Cart key={item.id} {...item} />)}
+            {items &&
+              items
+                .filter(({ title }) => title.toLowerCase().includes(search.toLowerCase()))
+                .map((item) => <Cart key={item.id} {...item} />)}
           </div>
         </div>
       </div>

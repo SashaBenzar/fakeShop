@@ -11,4 +11,5 @@ export interface Item {
 export interface Sort {
   category: string;
   sort: string;
+  search: string;
 }
