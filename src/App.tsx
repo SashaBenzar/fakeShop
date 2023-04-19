@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './scss/style.scss';
-import { Footer, Header, Products } from './pages/';
+import { Products, Layout } from './pages/';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+  Navigate,
+} from 'react-router-dom';
 
-function App() {
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="home" element={<Products />} />
+      <Route index element={<Navigate to="home" />} />
+      <Route path="*" element={<h1>Error 404</h1>} />
+    </Route>,
+  ),
+);
+
+const App: React.FC = () => {
   return (
     <div className="wrapper">
-      <Header />
-      <Products />
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
-}
+};
 
 export default App;

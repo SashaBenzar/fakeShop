@@ -17,7 +17,7 @@ export const Categories: React.FC = () => {
         all
       </li>
       {isLoading && <CategoriesSkeleton />}
-      {error && <h1>Error</h1>}
+      {error && <h1>:(</h1>}
       {categories &&
         categories.map((item: string) => (
           <li

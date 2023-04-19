@@ -29,9 +29,6 @@ export const Header: React.FC = () => {
               100$
               <img src={basket} alt="basket" />
             </div>
-            <div className={styles.headerProfile}>
-              <img src={profile} alt="profile" />
-            </div>
           </div>
         </div>
       </div>
