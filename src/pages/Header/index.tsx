@@ -3,9 +3,9 @@ import styles from './Header.module.scss';
 
 import searchImg from '../../img/search.svg';
 import basket from '../../img/basket.svg';
-import profile from '../../img/profile.svg';
 import { useAppDispatch, selectSort, useAppSelector } from '../../Redux/hooks';
 import { setSearch } from '../../Redux/Slice/sortSlice';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +15,9 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className="conteiner">
         <div className={styles.headerBody}>
-          <div className={styles.headerLogo}>Fake Shop</div>
+          <Link to="/" className={styles.headerLogo}>
+            Fake Shop
+          </Link>
           <div className={styles.headerSearch}>
             <input
               value={search}
@@ -27,7 +29,9 @@ export const Header: React.FC = () => {
           <div className={styles.headerMenu}>
             <div className={styles.headerBasket}>
               100$
-              <img src={basket} alt="basket" />
+              <Link to="basket">
+                <img src={basket} alt="basket" />
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './scss/style.scss';
-import { Products, Layout } from './pages/';
+import { Products, Layout, Basket } from './pages/';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +13,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="home" element={<Products />} />
+      <Route path="basket" element={<Basket />} />
       <Route index element={<Navigate to="home" />} />
       <Route path="*" element={<h1>Error 404</h1>} />
     </Route>,
