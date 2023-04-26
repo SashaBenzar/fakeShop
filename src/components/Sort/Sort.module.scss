@@ -6,3 +6,10 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 768px) {
+  .div {
+    margin: 0;
+    text-align: start;
+  }
+}

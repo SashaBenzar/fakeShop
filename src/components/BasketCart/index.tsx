@@ -1,29 +1,31 @@
 import React from 'react';
 import styles from './BasketCart.module.scss';
 import del from '../../img/x.svg';
-import test from '../../img/image1.png';
+import { BasketItem } from '../../Redux/types';
+import { useAppDispatch } from '../../Redux/hooks';
+import { deleteItem, minusItem, plusItem } from '../../Redux/Slice/basketSlice';
 
-export const BasketCart: React.FC = ({ ...props }) => {
+export const BasketCart: React.FC<BasketItem> = ({ ...props }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.cart}>
       <div className={styles.cartConteiner}>
         <div className={styles.cartImg}>
-          <img src={test} alt="img" />
+          <img src={props.image} alt="img" />
         </div>
         <div className={styles.cartInfo}>
-          <div className={styles.cartTitle}>
-            Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
-          </div>
-          <div className={styles.cartPrice}>100$</div>
+          <div className={styles.cartTitle}>{props.title}</div>
+          <div className={styles.cartPrice}>{props.price}$</div>
         </div>
       </div>
       <div className={styles.cartConteiner}>
         <div className={styles.cartAdd}>
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
+          <button onClick={() => dispatch(minusItem(props.id))}>-</button>
+          <span>{props.count}</span>
+          <button onClick={() => dispatch(plusItem(props.id))}>+</button>
         </div>
-        <div className={styles.cartDelete}>
+        <div className={styles.cartDelete} onClick={() => dispatch(deleteItem(props.id))}>
           <img src={del} alt="X" />
         </div>
       </div>

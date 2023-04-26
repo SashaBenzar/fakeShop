@@ -3,13 +3,7 @@
   margin: 0px 0px 30px 0px;
   height: 400px;
   min-width: 275px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1, 1.1);
-  }
-
-  &Conteiner {
+  transition: all 0.3s ease &Conteiner {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -67,6 +61,14 @@
       padding: 0px 4px;
       border-radius: 30px;
       margin: 0px 0px 0px 4px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart {
+    &:hover {
+      transform: scale(1.1, 1.1);
     }
   }
 }

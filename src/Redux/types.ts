@@ -13,3 +13,12 @@ export interface Sort {
   sort: string;
   search: string;
 }
+
+export interface BasketItem extends Item {
+  count: number;
+}
+
+export interface Basket {
+  totalPrice: number;
+  items: BasketItem[];
+}
