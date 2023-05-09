@@ -13,7 +13,7 @@ export const productsApi = createApi({
         },
       }),
     }),
-    getCategories: builder.query<string[], string>({
+    getCategories: builder.mu<string[], string>({
       query: () => ({
         url: 'products/categories',
       }),
